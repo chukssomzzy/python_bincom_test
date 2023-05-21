@@ -9,6 +9,7 @@ def median_color(week):
     unique_freq = Counter([color for arr in week for color in arr])
     sorted_color = sorted(unique_freq, key=lambda color: unique_freq[color],
                           reverse=True)
+    print(unique_freq.items())
     freq = sum(unique_freq.values())
     median = (freq + 1) / 2
     cumm_freq = 0
