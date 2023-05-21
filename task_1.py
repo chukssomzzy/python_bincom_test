@@ -18,6 +18,7 @@ def get_mean_color(week):
     freq = 0
     color_val = dict()
     i = 1
+    lookup_color = dict()
 
     for arr in week:
         for val in arr:
@@ -25,12 +26,13 @@ def get_mean_color(week):
 
     for color in sorted(unique_freq):
         color_val[color] = i
+        lookup_color[str(i)] = color
         i = i + 1
 
     freq = sum(num for _, num in unique_freq.items())
     mean_color = sum(color_val[col] * freq for col, freq in unique_freq.items()
                      ) / freq
-    return (mean_color)
+    return (lookup_color[str(round(mean_color))])
 
 
 print(f"Mean_Color = {get_mean_color(week_color)}")
