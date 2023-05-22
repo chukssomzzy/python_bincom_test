@@ -1,0 +1,2 @@
+# python_bincom_test
+python_bincom_test
